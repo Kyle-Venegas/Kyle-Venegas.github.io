@@ -22,7 +22,6 @@ const bookmarks = [
       { name: "5e.tools", url: "https://5e.tools/5etools.html" },
       { name: "drive", url: "https://drive.google.com/drive/folders/140YWggIhZC5--V1Df05f-ngOFQiUZfB6" },
       { name: "r/d100", url: "https://reddit.com/r/d100" },
-      { name: "1d4chan", url: "https://1d4chan.org" },
     ],
   },
   {
