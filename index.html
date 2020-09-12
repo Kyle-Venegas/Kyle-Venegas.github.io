@@ -1,120 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<!--Starpage by -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>~</title>
+	<link rel="stylesheet" style="text/css" href="general.css" />
+</head>
 
-    <title>Homepage</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
-  </head>
-  <body>
-    <div id="search">
-      <input
-        id="search-field"
-        type="text"
-        name="search-field"
-        onkeypress="return search(event)"
-      />
-    </div>
-    <div class="container">
-      <div id="clock"></div>
-      <div id="bookmark-container"></div>
-    </div>
+<body>
+	<div class="main" style="display: block">
+		<div class="image-wrapper">
 
-    <script src="bookmarks.js"></script>
-    <script>
-      const searchUrl = "https://google.com/search?q=";
-      // Search on enter key event
-      function search(e) {
-        if (e.keyCode == 13) {
-          var val = document.getElementById("search-field").value;
-          window.open(searchurl + val);
-        }
-      }
-      // Get current time and format
-      function getTime() {
-        let date = new Date(),
-          min = date.getMinutes(),
-          sec = date.getSeconds(),
-          hour = date.getHours();
+			<div class="mySlides fade">
+				<img src="img/side1.gif">
+			</div>
 
-        return (
-          "" +
-          (hour < 10 ? "0" + hour : hour) +
-          ":" +
-          (min < 10 ? "0" + min : min) +
-          ":" +
-          (sec < 10 ? "0" + sec : sec)
-        );
-      }
-      // Handle Weather request
-      function getWeather() {
-        let xhr = new XMLHttpRequest();
-        // Request to open weather map
-        xhr.open(
-          "GET",
-          "http://api.openweathermap.org/data/2.5/weather?id=4737316&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece"
-        );
-        xhr.onload = () => {
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              let json = JSON.parse(xhr.responseText);
-              document.getElementById("temp").innerHTML =
-                json.main.temp.toFixed(0) + " F";
-              document.getElementById("weather-description").innerHTML =
-                json.weather[0].description;
-            } else {
-              console.log("error msg: " + xhr.status);
-            }
-          }
-        };
-        xhr.send();
-      }
-      // Handle writing out Bookmarks
-      function setupBookmarks() {
-        const bookmarkContainer = document.getElementById("bookmark-container");
-        bookmarkContainer.innerHTML = bookmarks
-          .map((b) => {
-            const html = ["<div class='bookmark-set'>"];
-            html.push(`<div class="bookmark-title">${b.title}</div>`);
-            html.push('<div class="bookmark-inner-container">');
-            html.push(
-              ...b.links.map(
-                (l) =>
-                  `<a class="bookmark" href="${l.url}" target="_blank">${l.name}</a>`
-              )
-            );
-            html.push("</div></div>");
-            return html.join("");
-          })
-          .join("");
-      }
+			<div class="mySlides fade">
+				<img src="img/side2.gif">
+			</div>
 
-      window.onload = () => {
-        setupBookmarks();
-        getWeather();
-        // Set up the clock
-        document.getElementById("clock").innerHTML = getTime();
-        // Set clock interval to tick clock
-        setInterval(() => {
-          document.getElementById("clock").innerHTML = getTime();
-        }, 100);
-      };
+			<div class="mySlides fade">
+				<img src="img/side3.gif">
+			</div>
 
-      document.addEventListener("keyup", (event) => {
-        if (event.keyCode == 32) {
-          // Spacebar code to open search
-          document.getElementById("search").style.display = "flex";
-          document.getElementById("search-field").focus();
-        } else if (event.keyCode == 27) {
-          // Esc to close search
-          document.getElementById("search-field").value = "";
-          document.getElementById("search-field").blur();
-          document.getElementById("search").style.display = "none";
-        }
-      });
-    </script>
-  </body>
-</html>
+			<div class="mySlides fade">
+				<img src="img/side4.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side5.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side6.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side7.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side8.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side9.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side10.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side11.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side12.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side13.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side14.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side15.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side16.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side17.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side18.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side19.gif">
+			</div>
+
+			<div class="mySlides fade">
+				<img src="img/side20.gif">
+			</div>
+
+			<a class="next" onclick="plusSlides(1)">&#8734;</a>
+		</div>
+		<br>
+
+		<div style="text-align:center">
+			<span class="reqdVar" onclick="currentSlide(1)"></span>
+			<span class="reqdVar" onclick="currentSlide(2)"></span>
+			<span class="reqdVar" onclick="currentSlide(3)"></span>
+			<span class="reqdVar" onclick="currentSlide(4)"></span>
+			<span class="reqdVar" onclick="currentSlide(5)"></span>
+			<span class="reqdVar" onclick="currentSlide(6)"></span>
+			<span class="reqdVar" onclick="currentSlide(7)"></span>
+			<span class="reqdVar" onclick="currentSlide(8)"></span>
+			<span class="reqdVar" onclick="currentSlide(9)"></span>
+			<span class="reqdVar" onclick="currentSlide(10)"></span>
+			<span class="reqdVar" onclick="currentSlide(11)"></span>
+			<span class="reqdVar" onclick="currentSlide(12)"></span>
+			<span class="reqdVar" onclick="currentSlide(13)"></span>
+			<span class="reqdVar" onclick="currentSlide(14)"></span>
+			<span class="reqdVar" onclick="currentSlide(15)"></span>
+			<span class="reqdVar" onclick="currentSlide(16)"></span>
+			<span class="reqdVar" onclick="currentSlide(17)"></span>
+			<span class="reqdVar" onclick="currentSlide(18)"></span>
+			<span class="reqdVar" onclick="currentSlide(19)"></span>
+			<span class="reqdVar" onclick="currentSlide(20)"></span>
+		</div>
+
+		<header>
+			<br>
+			<h1>いらっしゃいませ, <span class="flair">X A M P</span></h1>
+		</header>
+
+		<nav>
+			<br>
+			<ul class="blue">
+				<a style="font-size:22px">Social</a>
+				<li><a href="https://www.fb.com/">Facebook</a></li>
+				<li><a href="https://www.youtube.com">Youtube</a></li>
+				<li><a href="https://reddit.com/">Reddit</a></li>
+				<li><a href="https://web.whatsapp.com/">Whatsapp</a></li>
+				<li><a href="https://twitter.com/">Twitter</a></li>
+			</ul>
+
+			<ul class="green">
+				<a style="font-size:22px">Study</a>
+				<li><a href="https://kotlinlang.org/docs/reference/">Kotlin</a></li>
+				<li><a href="http://github.com/">Github</a></li>
+			</ul>
+
+			<ul class="red">
+				<a style="font-size:22px">Anime</a>
+				<li><a href="https://9anime.to/">9anime</a></li>
+				<li><a href="https://www1.gogoanime.movie/">Gogoanime</a></li>
+				<li><a href="https://myanimelist.net/">MyAnimeList</a></li>
+				<li><a href="https://pixiv.net/">Pixiv</a></li>
+				<li><a href="https://nyaa.si/">Nyaa</a></li>
+			</ul>
+
+			<ul class="yellow">
+				<a style="font-size:22px">Else</a>
+				<li><a href="https://filecr.com/">FileCR</a></li>
+				<li><a href="https://gmail.com/">Gmail</a></li>
+				<li><a href="https://amazon.in">Amazon</a></li>
+				<li><a href="https://katcr.to/">Katcr</a></li>
+				<li><a href="https://1337x.to/">1337x</a></li>
+				<li><a href="https://chiasenhac.vn/">Chiasenhac</a></li>
+			</ul>
+		</nav>
+
+		<div class="codes" id="codes">
+			<script>
+			//document.getElementById("main").innerHTML = Date();
+			function updateClock() {
+				var days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
+				var m = new Date();
+				var dateString =
+				(days[ m.getDay() ]) + " " +
+				("0" + m.getDate()).slice(-2) + "/" +
+				("0" + (m.getMonth()+1)).slice(-2) +"/"+
+				m.getFullYear() +" "+
+				("0" + m.getHours()).slice(-2) + ":" +
+				("0" + m.getMinutes()).slice(-2) + ":" +
+				("0" + m.getSeconds()).slice(-2);
+
+				// set the content of the element with the ID codes to the formatted string
+				document.getElementById('codes').innerHTML = dateString;
+
+				// call this function again in 1000ms
+				setTimeout(updateClock, 1000);
+			}
+			updateClock(); // initial call
+
+			// Set local storage
+			var slideIx = Number(localStorage.getItem('slideIndex') || 1);
+
+			var slideIndex = slideIx;
+			showSlides(slideIndex);
+
+			// Next/previous controls
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+				localStorage.setItem('slideIndex', slideIndex);
+				console.log(localStorage.getItem('slideIndex'));
+			}
+
+			// Thumbnail image controls
+			function currentSlides(n) {
+				showSlides(slideIndex = n);
+				localStorage.setItem('slideIndex', slideIndex);
+				console.log(localStorage.getItem('slideIndex'));
+			}
+
+			// Show slides
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var reqdVars = document.getElementsByClassName("reqdVar");
+				if (n > slides.length) {
+					slideIndex = 1;
+				}
+				if (n < 1) {
+					slideIndex = slides.length;
+				}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < reqdVars.length; i++) {
+					reqdVars[i].className = reqdVars[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				reqdVars[slideIndex-1].className += " active";
+			}
+
+			</script>
+		</div>
+	</body>
+	</html>
