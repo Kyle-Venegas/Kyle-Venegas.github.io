@@ -13,6 +13,7 @@ const bookmarks = [
     links: [
       { name: "gmail", url: "https://gmail.com" },
       { name: "drive", url: "https://drive.google.com" },
+      { name: "onenote", url: "https://onenote.com" },
     ],
   },
   {
