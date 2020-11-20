@@ -12,8 +12,8 @@ const bookmarks = [
     title: "drive",
     links: [
       { name: "gmail", url: "https://gmail.com" },
-      { name: "drive", url: "https://drive.google.com" },
-      { name: "onenote", url: "https://onenote.com" },
+      { name: "gdrive", url: "https://drive.google.com" },
+      { name: "onedrive", url: "https://onedrive.live.com" },
     ],
   },
   {
