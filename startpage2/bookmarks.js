@@ -17,12 +17,9 @@ const bookmarks = [
     ],
   },
   {
-    title: "classes",
+    title: "calculator",
     links: [
-      { name: "class 1", url: "https://google.com" },
-      { name: "class 2", url: "https://google.com" },
-      { name: "class 3", url: "https://google.com" },
-      { name: "class 4", url: "https://google.com" },
+      { name: "desmos scientific", url: "https://www.desmos.com/scientific" },
     ],
   },
   {
